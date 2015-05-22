@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Page with inline JS loading</title>
+</head>
+<body>
+<header><strong>Page with inline JS loading</strong></header>
+<p>Above the fold component 1 blocked</p>
+<p>Above the fold component 2 blocked</p>
+<p>Above the fold component 3 blocked</p>
+<p id="atf-content"></p>
+<p id="content"></p>
+<script type="text/javascript">
+    function sleepFor(ms) {
+        var now = new Date().getTime();
+        while (new Date().getTime() < now + ms){}
+    }
+    sleepFor(3000);
+    document.getElementById('content').innerHTML = 'This is the content after delay';
+</script>
+</body>
+</html>
